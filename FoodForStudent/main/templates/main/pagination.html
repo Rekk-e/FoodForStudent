@@ -1,0 +1,20 @@
+{{% extends "index.html" %}}
+<div class="page-slider">
+            <ul class="danuas">
+                {% if page.has_previous %}
+                <li><a href="?page={{ page.previous_page_number }}" class="arrow-left"> <img class="arrow-left-image" src="static/main/img/fork.png" alt=""> </a></li>
+                {% endif %}
+
+                {{ % for p in page_obj.paginator.page_range % }}
+                {{ % if page_obj.number == p % }}
+                  <li class="page-button-active">{{p}} </li>
+                {{ % else % }}
+                  <li> <a href="?page={{ p }}">{{p}}</a></li>
+
+                {{ % endfor % }}
+                {% if page.has_next %}
+                <li><a href="?page={{ page.next_page_number }}" class="arrow-right"> <img class="arrow-right-image" src="static/main/img/spoon.png" alt=""> </a></li>
+                {% endif %}
+
+            </ul>
+        </div>

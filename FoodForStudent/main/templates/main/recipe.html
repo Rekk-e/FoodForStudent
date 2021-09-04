@@ -1,0 +1,83 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+    <article class="article-recipe">
+
+       <h4 class="article-title">
+           {{recipe.title}}
+       </h4>
+       <time class="article-date" datetime="{{recipe.data}}">{{recipe.data}}</time>
+           <div class="article-content">
+                <div class="image-box">
+                   <img class="main-image" src="{{recipe.image.url}}" alt="buter">
+
+                   <div class="side-image-box">
+                       <img class="extra-image" src="{{recipe.image.url}}" alt="buter">
+                       <img class="extra-image" src="{{recipe.image.url}}" alt="buter">
+                   </div>
+                </div>
+            </div>
+
+               <div class="article-description-box">
+                   <div class="ingredient-box">
+                       <p class="description-name">Ингредиенты:</p>
+                       <ul class="ingredient-list">
+                       {% for ing in ingredients %}
+                           <li class="ingredient-name">{{ ing.title }} - {{ ing.amount }}.</li>
+                       {% endfor %}
+                       </ul>
+                   </div>
+
+                   <div class="information-box">
+                       <div class="information-time-box">
+                           <p class="description-name">Время приготовления:</p>
+                           <p class="information-text">{{ recipe.time }}</p>
+                       </div>
+
+                       <div class="information-difficulty">
+                           <p class="description-name">Сложность рецепта:</p>
+                           <p class="information-text">{{ recipe.difficult_l }}</p>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="recipe-descriprion-box">
+                  <p class="recipe-description">{{ recipe.text }}</p>
+               </div>
+
+               <div class="cooking-process-box">
+                   <h4 class="article-title working-title">Процесс приготовления</h4>
+                   <ul class="cooking-process-list">
+                       {% for step in steps %}
+                       <li class="cooking-process-step">
+                              <div class="step-text-box">
+                                   <p class="description-name">Шаг {{step.number}}</p>
+                                   <p class="step-text">{{step.text}}</p>
+                              </div>
+                              <img class="step-image" src="{{step.image.url}}" alt="buter">
+                       </li>
+                       {% endfor %}
+                   </ul>
+               </div>
+
+    </article>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

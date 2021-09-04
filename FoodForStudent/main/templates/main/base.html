@@ -1,0 +1,73 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <title>Кулинарные истории</title>
+    </head>
+    <body>
+
+        <header class="header">
+           <div class="header-image">
+                <img class="header-icon" src="{% static 'main/img/Egg.png' %}" alt="Cake">
+                <img class="header-icon" src="{% static 'main/img/Cookie.png' %}" alt="Cake">
+                <img class="header-icon" src="{% static 'main/img/Sausage.png' %}" alt="Cake">
+                <img class="header-icon" src="{% static 'main/img/Taco.png' %}" alt="Cake">
+            </div>
+
+           <div class="header-title-box">
+                <h1 class="header-title">Истории с общажной кухоньки</h1>
+                <h2 class="header-subtitle">Быстро, вкусно, по-человечески</h2>
+            </div>
+
+           <div class="header-image">
+                <img class="header-icon" src="{% static 'main/img/Muffin.png' %}" alt="Cake">
+                <img class="header-icon" src="{% static 'main/img/Soup.png' %}" alt="Cake">
+                <img class="header-icon" src="{% static 'main/img/Sushi.png' %}" alt="Cake">
+                <img class="header-icon" src="{% static 'main/img/Toast.png' %}" alt="Cake">
+            </div>
+        </header>
+
+        <nav class="nav">
+            <a class="nav-link" href="#">Главная</a>
+            <a class="nav-link" href="#">Новости</a>
+            <a class="nav-link" href="#">Видео</a>
+            <a class="nav-link" href="#">Об авторе</a>
+        </nav>
+
+    <div class="page">
+        <div class="container">
+            <main class="content">
+
+                {% block content %}
+                {% endblock %}
+
+            </main>
+                <aside class="sidebar">
+               <div class="sidebar-content">
+                    <h3 class="sidebar-title">Менюшка</h3>
+                    <ul class="sidebar-menu">
+                        <li class="menu-button"><a class="menu-link" href="#">Мясо</a></li>
+                        <li class="menu-button"><a class="menu-link" href="#">Птица</a></li>
+                        <li class="menu-button"><a class="menu-link" href="#">Рыба</a></li>
+                        <li class="menu-button"><a class="menu-link" href="#">Печёности</a></li>
+                        <li class="menu-button"><a class="menu-link" href="#">Салаты</a></li>
+                        <li class="menu-button"><a class="menu-link" href="#">Крупы</a></li>
+                        <li class="menu-button"><a class="menu-link" href="#">Овощи</a></li>
+                        <li class="menu-button"><a class="menu-link" href="#">Холодное</a></li>
+                        <li class="menu-button"><a class="menu-link" href="#">Сладкое</a></li>
+                    </ul>
+               </div>
+            </aside>
+        </div>
+
+        <footer class="footer">
+            Дальше Бога нет...
+        </footer>
+
+    </div>
+
+    </body>
+</html>

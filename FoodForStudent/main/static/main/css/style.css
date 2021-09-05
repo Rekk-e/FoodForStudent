@@ -8,6 +8,7 @@ body {
 
     background: url(main/img/background.jpg);
     background-position: bottom;
+
 }
 
 *,
@@ -25,7 +26,7 @@ html::-webkit-scrollbar {
 }
 
 .page {
-    width: 70%;
+    width: 1000px;
     margin: 0 auto;
 
     background-color: #f7f1f1;
@@ -169,7 +170,7 @@ html::-webkit-scrollbar {
 .sidebar {
     border-left: 1px solid #ea8c3b;
 
-    width: 25%;
+    width: 230px;
     padding: 5px;
 
     border-top-left-radius: 10px;
@@ -201,6 +202,9 @@ html::-webkit-scrollbar {
 }
 
 .menu-link::before {
+    content: "";
+    background-image: url(img/food-marker.png);
+    background-size: contain;
 
     display: inline-block;
 

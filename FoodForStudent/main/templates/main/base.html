@@ -8,7 +8,11 @@
         <title>Кулинарные истории</title>
     </head>
     <body>
-
+        <style>
+            body {
+                background: url("{% static 'main/img/background.jpg' %}") bottom;
+            }
+        </style>
         <header class="header">
            <div class="header-image">
                 <img class="header-icon" src="{% static 'main/img/Egg.png' %}" alt="Cake">
@@ -46,20 +50,27 @@
 
             </main>
                 <aside class="sidebar">
-               <div class="sidebar-content">
-                    <h3 class="sidebar-title">Менюшка</h3>
-                    <ul class="sidebar-menu">
-                        <li class="menu-button"><a class="menu-link" href="#">Мясо</a></li>
-                        <li class="menu-button"><a class="menu-link" href="#">Птица</a></li>
-                        <li class="menu-button"><a class="menu-link" href="#">Рыба</a></li>
-                        <li class="menu-button"><a class="menu-link" href="#">Печёности</a></li>
-                        <li class="menu-button"><a class="menu-link" href="#">Салаты</a></li>
-                        <li class="menu-button"><a class="menu-link" href="#">Крупы</a></li>
-                        <li class="menu-button"><a class="menu-link" href="#">Овощи</a></li>
-                        <li class="menu-button"><a class="menu-link" href="#">Холодное</a></li>
-                        <li class="menu-button"><a class="menu-link" href="#">Сладкое</a></li>
-                    </ul>
-               </div>
+                    <div class="sidebar-content">
+                        <h3 class="sidebar-title">Менюшка</h3>
+                        <ul class="sidebar-menu">
+                            <li class="menu-button"><a class="menu-link" href="#">Мясо</a></li>
+                            <li class="menu-button"><a class="menu-link" href="#">Птица</a></li>
+                            <li class="menu-button"><a class="menu-link" href="#">Рыба</a></li>
+                            <li class="menu-button"><a class="menu-link" href="#">Печёности</a></li>
+                            <li class="menu-button"><a class="menu-link" href="#">Салаты</a></li>
+                            <li class="menu-button"><a class="menu-link" href="#">Крупы</a></li>
+                            <li class="menu-button"><a class="menu-link" href="#">Овощи</a></li>
+                            <li class="menu-button"><a class="menu-link" href="#">Холодное</a></li>
+                            <li class="menu-button"><a class="menu-link" href="#">Сладкое</a></li>
+                        </ul>
+                    </div>
+                <style>
+                    .menu-link::before {
+                        content: "";
+                        background-image: url("{% static 'main/img/food-marker.png' %}");
+                        background-size: contain;
+                    }
+                </style>
             </aside>
         </div>
 

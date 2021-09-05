@@ -1,4 +1,5 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block content %}
 
@@ -34,15 +35,23 @@
                            <p class="description-name">Время приготовления:</p>
                            <p class="information-text">{{ recipe.time }}</p>
                        </div>
+                       <style>
+                            .ingredient-name::before, .information-text::before {
+                                content: "";
+                                background-image: url("{% static 'main/img/food-marker.png' %}");
+                                background-size: contain;
+                            }
+                        </style>
 
                        <div class="information-difficulty">
-                           <p class="description-name">Сложность рецепта:</p>
+                           <p class="description-name">Сложность приготовления:</p>
                            <p class="information-text">{{ recipe.difficult_l }}</p>
                        </div>
                    </div>
                </div>
 
                <div class="recipe-descriprion-box">
+                  <p class="description-name">Описание:</p>
                   <p class="recipe-description">{{ recipe.text }}</p>
                </div>
 

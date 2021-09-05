@@ -6,7 +6,6 @@ from . import views
 
 urlpatterns = [
     path('', views.recipe_list, name='recipe_list'),
-    path('category/<char:name>', views.recipe_list_category, name='recipe_list_category'),
     path('details/<int:id>/', views.recipe_detail, name='recipe_detail' )
 ]
 

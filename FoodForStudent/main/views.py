@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
-from .models import Recipe, Step, Ingredient
+from .models import Recipe, Step, Ingredient, Category
 
 
 #def index(request):
@@ -12,7 +12,7 @@ from .models import Recipe, Step, Ingredient
 def recipe_list(request):
     object_list = Recipe.objects.all()
 
-    paginator = Paginator(list(object_list), 1)  # 5 рецептов на каждой странице
+    paginator = Paginator(list(object_list), 2)  # 5 рецептов на каждой странице
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     try:
@@ -24,10 +24,20 @@ def recipe_list(request):
     print(page_number)
     return render(request, 'main/index.html', {'page_obj': page_obj, 'recipes': Recipes})
 
-def recipe_list_category(request, title):
-    object_list = Recipe.objects.all().filter(category='Мясо')
+def recipe_category(request, slug):
+    category = {'meat':'Мясо',
+                'bird':'Птица',
+                'fish':'Рыба',
+                'bakery':'Выпечка',
+                'salat':'Салаты',
+                'cereals':'Крупы',
+                'vegetables':'Овощи',
+                'cold':'Холодное',
+                'sweet':'Сладкое'}
+    this_category = category[slug]
+    object_list = Recipe.objects.all().filter(category = Category.objects.get(name=this_category) )
 
-    paginator = Paginator(list(object_list), 1)  # 5 рецептов на каждой странице
+    paginator = Paginator(list(object_list), 2)  # 5 рецептов на каждой странице
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     try:
